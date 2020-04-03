@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>
+      practice
+    </title>
+  </head>
+  <body>
+    <script>
+      var data =[{principal:2500, time:1.8}, 
+                 {principal:1000, time:5},
+                 {principal:3000, time:1},
+                 {principal:2000, time:3}];
+  
+         
+
+        function interestCalculator(data) {
+        let principal =[];
+        let time= [];
+        let interest =[];
+        let rate = [];
+        
+        for(i=0;i<data.length;i++){
+         principal.push(data[i].principal);
+         time.push(data[i].time);
+         if (principal[i]>=2500 && time[i]>1 && time[i]<3){rate[i]=3;
+         interest.push(data[i].principal*data[i].time*rate[i]/100)
+         }
+         else if(principal[i]>=2500 && time[i]>=3){rate[i]=4;
+         interest.push(data[i].principal*data[i].time*rate[i]/100);
+         }
+         else if (principal[i]<2500 || time[i]<=1){rate[i] = 2;
+         interest.push(data[i].principal*data[i].time*rate[i]/100);
+         }
+         else { rate[i] = 1;
+         interest.push(data[i].principal*data[i].time*rate[i]/100);
+         }
+          }
+          
+          
+
+          let interestData = principal.map(tot);
+
+          function tot(principal,i){
+           return{principal:principal,rate:rate[i],time:time[i],interest:interest[i]};
+          }
+          console.log(interestData);
+         return interestData;
+         }
+              console.log(interestCalculator(data));
+      
+
+  </script>
+ </body>
+</html>
